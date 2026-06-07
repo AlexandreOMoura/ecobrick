@@ -1,4 +1,6 @@
-/* RESET */
+/* =========================
+   RESET
+========================= */
 
 *{
     margin:0;
@@ -6,9 +8,18 @@
     box-sizing:border-box;
 }
 
+:root{
+    --green:#16a34a;
+    --green-dark:#15803d;
+    --green-light:#dcfce7;
+    --dark:#0f172a;
+    --gray:#555;
+    --white:#fff;
+}
+
 html{
     scroll-behavior:smooth;
-    scroll-padding-top:100px;
+    scroll-padding-top:90px;
 }
 
 body{
@@ -18,7 +29,15 @@ body{
     overflow-x:hidden;
 }
 
-/* NAVBAR */
+img{
+    max-width:100%;
+    height:auto;
+    display:block;
+}
+
+/* =========================
+   NAVBAR
+========================= */
 
 .navbar{
     position:fixed;
@@ -32,7 +51,7 @@ body{
 
     padding:15px 8%;
 
-    background:rgba(255,255,255,.95);
+    background:rgba(255,255,255,.96);
     backdrop-filter:blur(10px);
 
     box-shadow:0 2px 15px rgba(0,0,0,.08);
@@ -58,10 +77,12 @@ body{
 }
 
 .menu a:hover{
-    color:#16a34a;
+    color:var(--green);
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 
 .hero{
     min-height:100vh;
@@ -72,35 +93,35 @@ body{
 
     gap:60px;
 
-    padding:120px 8% 80px;
+    padding:140px 8% 80px;
 
     background:
     linear-gradient(
-    135deg,
-    #f7faf8 0%,
-    #ecfdf5 100%
+        135deg,
+        #f7faf8 0%,
+        #ecfdf5 100%
     );
 }
 
-.hero-content{
+.hero-content,
+.hero-image{
     flex:1;
 }
 
 .hero-image{
-    flex:1;
     text-align:center;
 }
 
 .hero-image img{
-    width:100%;
     max-width:500px;
+    margin:auto;
 }
 
 .badge{
     display:inline-block;
 
-    background:#dcfce7;
-    color:#15803d;
+    background:var(--green-light);
+    color:var(--green-dark);
 
     padding:10px 20px;
 
@@ -112,14 +133,12 @@ body{
 .hero h1{
     font-size:clamp(2.2rem,5vw,4rem);
     line-height:1.2;
-
     margin:25px 0;
 }
 
 .hero p{
     font-size:1.1rem;
     line-height:1.8;
-
     margin-bottom:30px;
 }
 
@@ -129,7 +148,9 @@ body{
     flex-wrap:wrap;
 }
 
-/* BOTÕES */
+/* =========================
+   BOTÕES
+========================= */
 
 .btn-primary,
 .btn-secondary{
@@ -146,29 +167,36 @@ body{
 }
 
 .btn-primary{
-    background:#16a34a;
+    background:var(--green);
     color:white;
 }
 
 .btn-primary:hover{
-    background:#15803d;
+    background:var(--green-dark);
     transform:translateY(-3px);
 }
 
 .btn-secondary{
-    border:2px solid #16a34a;
-    color:#16a34a;
+    border:2px solid var(--green);
+    color:var(--green);
 }
 
 .btn-secondary:hover{
-    background:#16a34a;
+    background:var(--green);
     color:white;
     transform:translateY(-3px);
 }
 
-/* SEÇÕES */
+/* =========================
+   SEÇÕES
+========================= */
 
-.section{
+.section,
+.solution,
+.ods,
+.feedback,
+.contact,
+.process{
     padding:100px 8%;
 }
 
@@ -183,13 +211,16 @@ body{
 }
 
 .section-title p{
-    color:#555;
+    color:var(--gray);
 }
 
-/* CARDS */
+/* =========================
+   CARDS
+========================= */
 
 .cards{
     display:grid;
+
     grid-template-columns:
     repeat(auto-fit,minmax(280px,1fr));
 
@@ -210,7 +241,7 @@ body{
 }
 
 .card:hover{
-    transform:translateY(-10px);
+    transform:translateY(-8px);
 }
 
 .card h3{
@@ -218,18 +249,18 @@ body{
 }
 
 .card p{
-    color:#555;
+    color:var(--gray);
     line-height:1.7;
 }
 
-/* SOLUÇÃO */
+/* =========================
+   SOLUÇÃO
+========================= */
 
 .solution{
     display:flex;
     align-items:center;
     gap:60px;
-
-    padding:100px 8%;
 }
 
 .solution-image,
@@ -238,12 +269,11 @@ body{
 }
 
 .solution-image img{
-    width:100%;
     border-radius:20px;
 }
 
 .subtitle{
-    color:#16a34a;
+    color:var(--green);
     font-weight:700;
 }
 
@@ -265,17 +295,19 @@ body{
     margin-bottom:12px;
 }
 
-/* ESTATÍSTICAS */
+/* =========================
+   ESTATÍSTICAS
+========================= */
 
 .stats{
-    background:#16a34a;
+    background:var(--green);
 
     color:white;
 
     display:grid;
 
     grid-template-columns:
-    repeat(auto-fit,minmax(200px,1fr));
+    repeat(auto-fit,minmax(220px,1fr));
 
     gap:30px;
 
@@ -289,91 +321,97 @@ body{
     font-weight:700;
 }
 
-/* PROCESSO */
-
-.process{
-    padding:100px 8%;
-}
-
-.timeline{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:20px;
-}
-
-.timeline div{
-    background:white;
-
-    padding:20px 30px;
-
-    border-radius:15px;
-
-    box-shadow:
-    0 5px 20px rgba(0,0,0,.08);
-
-    transition:.3s;
-}
-
-.timeline div:hover{
-    transform:translateY(-5px);
-}
-
-/* ODS */
+/* =========================
+   ODS
+========================= */
 
 .ods{
-    padding:100px 8%;
     text-align:center;
 }
 
 .ods h2{
-    margin-bottom:40px;
     font-size:2.5rem;
+    margin-bottom:40px;
 }
 
 .ods-container{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:20px;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(300px,1fr));
+
+    gap:25px;
+
+    max-width:1200px;
+
+    margin:0 auto;
 }
 
 .ods-card{
-    background:#16a34a;
+
+    background:var(--green);
 
     color:white;
 
-    padding:25px 40px;
+    padding:30px;
 
-    border-radius:15px;
-
-    font-size:1.2rem;
-    font-weight:700;
-
-    cursor:pointer;
+    border-radius:20px;
 
     transition:.3s;
+
+    cursor:pointer;
 }
 
 .ods-card:hover{
-    transform:translateY(-8px);
-    box-shadow:
-    0 10px 25px rgba(0,0,0,.15);
+    transform:translateY(-6px);
 }
 
-/* EQUIPE */
+.ods-card p{
+    margin-top:15px;
+    line-height:1.6;
+}
+
+/* =========================
+   ENQUETE
+========================= */
+
+.feedback{
+
+    background:#ecfdf5;
+
+    text-align:center;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.feedback h2{
+    font-size:2.5rem;
+    margin-bottom:15px;
+}
+
+.feedback p{
+    max-width:700px;
+    margin-bottom:30px;
+    line-height:1.8;
+}
+
+/* =========================
+   EQUIPE
+========================= */
 
 .team{
     text-align:center;
 }
 
 .team img{
-    width:100%;
     max-width:450px;
 
-    border-radius:20px;
+    margin:0 auto 20px;
 
-    margin-bottom:20px;
+    border-radius:20px;
 
     box-shadow:
     0 10px 30px rgba(0,0,0,.15);
@@ -383,16 +421,16 @@ body{
     margin-bottom:10px;
 }
 
-/* CONTATO */
+/* =========================
+   CONTATO
+========================= */
 
 .contact{
-    background:#0f172a;
+    background:var(--dark);
 
     color:white;
 
     text-align:center;
-
-    padding:100px 8%;
 
     display:flex;
     flex-direction:column;
@@ -406,44 +444,37 @@ body{
 
 .contact p{
     max-width:700px;
-
     line-height:1.8;
-
     margin-bottom:35px;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 footer{
     background:#08111f;
-
     color:white;
-
     text-align:center;
-
     padding:25px;
 }
 
-/* SCROLLBAR */
+/* =========================
+   SCROLLBAR
+========================= */
 
 ::-webkit-scrollbar{
     width:10px;
 }
 
-::-webkit-scrollbar-track{
-    background:#eee;
-}
-
 ::-webkit-scrollbar-thumb{
-    background:#16a34a;
+    background:var(--green);
     border-radius:10px;
 }
 
-::-webkit-scrollbar-thumb:hover{
-    background:#15803d;
-}
-
-/* RESPONSIVO */
+/* =========================
+   RESPONSIVO
+========================= */
 
 @media(max-width:900px){
 
@@ -464,22 +495,6 @@ footer{
 
 }
 
-.feedback{
-    padding:100px 8%;
-    text-align:center;
-    background:#ecfdf5;
-}
-
-.feedback h2{
-    margin-bottom:20px;
-}
-
-.feedback p{
-    max-width:700px;
-    margin:0 auto 30px;
-    line-height:1.8;
-}
-
 @media(max-width:768px){
 
     .navbar{
@@ -495,26 +510,44 @@ footer{
     }
 
     .hero{
-        padding-top:140px;
+        padding:130px 5% 60px;
     }
 
     .section,
     .solution,
-    .process,
     .ods,
-    .contact{
+    .feedback,
+    .contact,
+    .process{
         padding:70px 5%;
+    }
+
+    .hero h1{
+        font-size:2.2rem;
     }
 
     .section-title h2,
     .solution h2,
     .ods h2,
+    .feedback h2,
     .contact h2{
         font-size:2rem;
     }
 
     .counter{
         font-size:2.2rem;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .btn-primary,
+    .btn-secondary{
+        width:100%;
+        max-width:300px;
+        text-align:center;
     }
 
 }
