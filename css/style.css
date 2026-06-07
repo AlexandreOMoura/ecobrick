@@ -464,6 +464,22 @@ footer{
 
 }
 
+.feedback{
+    padding:100px 8%;
+    text-align:center;
+    background:#ecfdf5;
+}
+
+.feedback h2{
+    margin-bottom:20px;
+}
+
+.feedback p{
+    max-width:700px;
+    margin:0 auto 30px;
+    line-height:1.8;
+}
+
 @media(max-width:768px){
 
     .navbar{
